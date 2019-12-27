@@ -1,1 +1,24 @@
-//
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card:hover .edit {
+    display: block;
+}
+
+.edit {
+    display: none;
+}
+
+.card:hover .delete {
+    display: block;
+}
+
+.delete {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}

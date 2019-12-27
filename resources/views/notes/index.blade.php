@@ -11,3 +11,19 @@
         </div>
     </div>
 @endsection
+
+@section('js_includes')
+    <script>
+        $(function() {
+            $("[data-action=delete]").click(function(event) {
+                $.ajax({
+                    url: '/notes/'+$(this).data('id')+'/destroy',
+                    type: 'DELETE',
+                    success: function(result) {
+                        $(event.target).closest(".card").addClass('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+@endsection

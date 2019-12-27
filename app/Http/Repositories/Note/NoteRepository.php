@@ -34,7 +34,7 @@ class NoteRepository implements NoteRepositoryInterface
      */
     public function delete($id)
     {
-        Note::destory($id);
+        Note::find($id)->delete();
     }
 
     /**

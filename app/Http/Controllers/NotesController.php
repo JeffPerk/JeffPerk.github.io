@@ -35,8 +35,19 @@ class NotesController extends Controller
     public function store()
     {
         $this->note->store(request()->all());
-        $notes = $this->note->all();
 
-        return view('notes.index', compact('notes'));
+        request()->session()->flash('success', 'Note was successfully created!');
+
+        return redirect(route('notes.index'));
+    }
+
+    public function destroy($id)
+    {
+        $this->note->delete($id);
+
+        return response()->json([
+            'success' => true,
+            'message' => "Note deleted successfully!"
+        ]);
     }
 }
