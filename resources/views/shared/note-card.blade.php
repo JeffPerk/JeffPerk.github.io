@@ -9,7 +9,7 @@
                     <span aria-hidden="true"><i class="fas fa-trash"></i></span>
                     <span class="sr-only">Close</span>
                 </button>
-                <a href="#">
+                <a href="{{route('notes.edit', $note->id)}}">
                     <button class="close edit" data-action="edit" data-id="{{ $note->id }}">
                         <span aria-hidden="true"><i class="fas fa-edit"></i></span>
                         <span class="sr-only">Close</span>

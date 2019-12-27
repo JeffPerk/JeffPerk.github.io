@@ -50,4 +50,20 @@ class NotesController extends Controller
             'message' => "Note deleted successfully!"
         ]);
     }
+
+    public function edit($id)
+    {
+        $note = $this->note->find($id);
+
+        return view('notes.edit', compact('note'));
+    }
+
+    public function update($id)
+    {
+        $this->note->update($id, request()->all());
+
+        request()->session()->flash('success', 'Note successfully updated!');
+
+        return redirect(route('notes.index'));
+    }
 }
