@@ -4,7 +4,7 @@ This is a fun, simple project that illustrates a basic note managing system.
 
 ## Technologies
 
-The project was built using Laravel 6 and using SqlLite for the DB.
+The project was built using Laravel 6 and using SQLite for the DB.
 
 ## Areas of Focus
 
