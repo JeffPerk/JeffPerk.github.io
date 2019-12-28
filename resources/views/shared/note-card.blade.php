@@ -18,10 +18,10 @@
             </div>
         </div>
         <div class="card-body">
-            <p>{{ $note->creator }}</p>
+            <h6>Creator: {{ $note->creator }}</h6>
             <p>{{ $note->message }}</p>
         </div>
-        <div class="card-footer">
+        <div class="card-footer mass-delete-footer">
             <input type="checkbox" name="notes[]" class="form-check-input mass-delete" data-id="{{ $note->id }}" value="{{ $note->id }}">
         </div>
     </div>

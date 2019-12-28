@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container-fluid">
+        <div class="col-md-4">
+            <div class="input-group mb-3 nav-item note-search">
+                <input type="text" class="form-control note-search-input" placeholder="Search Notes..." aria-label="Recipient's username" aria-describedby="button-addon2">
+            </div>
+        </div>
         <div class="col-md-12">
             <div class="row">
                 @foreach ($notes as $note)
@@ -18,6 +23,8 @@
         $(function() {
             // Some validation here to disable the button until some notes have been checked
             // $("#fixedbutton").attr('disabled', true);
+
+            // This is the mass delete functionality
             $("#fixedbutton").click(function(e) {
                 let allIDs = [];
 
@@ -39,6 +46,7 @@
                 }
             });
 
+            // This is the single delete functionality
             $("[data-action=delete]").click(function(event) {
                 $.ajax({
                     url: '/notes/'+$(this).data('id')+'/destroy',
@@ -48,6 +56,15 @@
                     }
                 });
             });
+
+            // This is the functionality for the search filter
+            $(".note-search-input").keyup(function(e) {
+                let value = $(this).val();
+                $(".card-title>h4").each(function() {
+                    let text = $(this).text().toLowerCase();
+                    (text.indexOf(value) == 0) ? $(this).closest('.card').show() : $(this).closest('.card').hide();
+                });
+            })
         });
     </script>
 @endsection
