@@ -1,0 +1,50 @@
+.card-header {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.card:hover .edit {
+  display: block;
+}
+
+.edit {
+  display: none;
+}
+
+.card:hover .delete {
+  display: block;
+}
+
+.delete {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.hello-card {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  margin-top: 15px;
+}
+
+#fixedbutton {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+
+.mass-delete-footer {
+  text-align: right;
+}
+
+.mass-delete {
+  margin-left: 5px;
+  margin-top: -5px;
+}
+
