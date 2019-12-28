@@ -20,6 +20,9 @@ class NotesController extends Controller
         $this->note = $note;
     }
 
+    /**
+     * Gets all notes
+     */
     public function index()
     {
         $notes = $this->note->all();
@@ -27,11 +30,17 @@ class NotesController extends Controller
         return view('notes.index', compact('notes'));
     }
 
+    /**
+     * Directs to the create a note view
+     */
     public function create()
     {
         return view('notes.create');
     }
 
+    /**
+     * Stores the newly created note
+     */
     public function store()
     {
         $this->note->store(request()->all());
@@ -39,6 +48,9 @@ class NotesController extends Controller
         return redirect(route('notes.index'))->with('status', 'Note successfully created!');
     }
 
+    /**
+     * Deletes a note
+     */
     public function destroy($id)
     {
         $this->note->delete($id);
@@ -49,6 +61,9 @@ class NotesController extends Controller
         ]);
     }
 
+    /**
+     * Directs the user to the edit a note view
+     */
     public function edit($id)
     {
         $note = $this->note->find($id);
@@ -56,6 +71,9 @@ class NotesController extends Controller
         return view('notes.edit', compact('note'));
     }
 
+    /**
+     * Updates a note
+     */
     public function update($id)
     {
         $this->note->update($id, request()->all());
@@ -63,6 +81,9 @@ class NotesController extends Controller
         return redirect(route('notes.index'))->with('status', 'Note successfully updated!');
     }
 
+    /**
+     * Mass deletion of notes
+     */
     public function massDelete()
     {
         if (!request('ids')) {
