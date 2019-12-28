@@ -22,4 +22,6 @@ Route::group(['prefix' => 'notes'], function () {
     Route::get('/{note}/edit', 'NotesController@edit')->name('notes.edit');
     Route::delete('/{note}/destroy', 'NotesController@destroy')->name('notes.delete');
     Route::put('/{note}/update', 'NotesController@update')->name('notes.update');
+
+    Route::delete('/mass-delete', 'NotesController@massDelete')->name('notes.mass-delete');
 });

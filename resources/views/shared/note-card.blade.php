@@ -21,5 +21,8 @@
             <p>{{ $note->creator }}</p>
             <p>{{ $note->message }}</p>
         </div>
+        <div class="card-footer">
+            <input type="checkbox" name="notes[]" class="form-check-input mass-delete" data-id="{{ $note->id }}" value="{{ $note->id }}">
+        </div>
     </div>
 </div>

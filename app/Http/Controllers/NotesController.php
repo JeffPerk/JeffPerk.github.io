@@ -66,4 +66,23 @@ class NotesController extends Controller
 
         return redirect(route('notes.index'));
     }
+
+    public function massDelete()
+    {
+        if (!request('ids')) {
+            return response()->json([
+                'success' => false,
+                'message' => "No ids were provided"
+            ]);
+        }
+
+        foreach (request('ids') as $id) {
+            $this->note->delete($id);
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => "Notes deleted!"
+        ]);
+    }
 }
