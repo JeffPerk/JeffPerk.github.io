@@ -12,7 +12,7 @@ There are several areas that could be expanded upon, as well as practices that c
 
 ### Front End Technologies
 
-Laravel comes with several front end frameworks out of the box to use. For this project, React or Vue could be sufficient enough with the ease of components creating the cards, as well as separating concerns like the navbar.
+Laravel comes with several front end frameworks out of the box to use. For this project, React or Vue could be sufficient enough with the ease of components creating the cards, as well as separating concerns like the navbar. Also, both of these frameworks handle state very well, and would provide a seamless UI/UX experience.
 
 ### Input Validation
 
