@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container-fluid">
+        @if (session('status'))
+            @include('shared.alert', ['message' => session('status')])
+        @endif
         <div class="col-md-4">
             <div class="input-group mb-3 nav-item note-search">
                 <input type="text" class="form-control note-search-input" placeholder="Search Notes..." aria-label="Recipient's username" aria-describedby="button-addon2">

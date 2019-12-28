@@ -36,9 +36,7 @@ class NotesController extends Controller
     {
         $this->note->store(request()->all());
 
-        request()->session()->flash('success', 'Note was successfully created!');
-
-        return redirect(route('notes.index'));
+        return redirect(route('notes.index'))->with('status', 'Note successfully created!');
     }
 
     public function destroy($id)
@@ -62,9 +60,7 @@ class NotesController extends Controller
     {
         $this->note->update($id, request()->all());
 
-        request()->session()->flash('success', 'Note successfully updated!');
-
-        return redirect(route('notes.index'));
+        return redirect(route('notes.index'))->with('status', 'Note successfully updated!');
     }
 
     public function massDelete()
